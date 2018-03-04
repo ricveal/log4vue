@@ -6,6 +6,14 @@ jobs:
 
     working_directory: ~/repo
 
+    environment:
+      COVERALLS_REPO_TOKEN: Wqr7UPMTw76tonP6S43wd6e0sXPof4aoF
+      COVERALLS_PARALLEL: true
+
+    notify:
+    webhooks:
+      - url: https://coveralls.io/webhook?repo_token=$COVERALLS_REPO_TOKEN
+
     steps:
       - checkout
 
