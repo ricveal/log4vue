@@ -24,6 +24,7 @@
       "src/docs/assets/customStyles.css"
     ],
     "docs": "src/docs",
+    "dist": "docs",
     "markdown": {
       "typographer": true,
       "plugins": {
