@@ -1,5 +1,3 @@
-import merge from 'lodash.merge';
-
 const Logger = { installed: false };
 Logger.install = (Vue, options = {}) => {
   // If is installed, everything is done.
@@ -17,10 +15,10 @@ Logger.install = (Vue, options = {}) => {
   };
   // Logger object with the default properties merged with the own properties of options.
   // If a key exists in both objects, the value from options will be used.
-  const logger = merge(defaultLogger, options);
-  if (options.levels) {
-    logger.levels = options.levels;
-  }
+  const logger = {};
+  Object.keys(defaultLogger).forEach((key) => {
+    logger[key] = options[key] || defaultLogger[key];
+  });
   logger.levels.forEach((level, index) => {
     logger[level] = (...data) => {
       // If severity is greater than current level, we return nothing.
