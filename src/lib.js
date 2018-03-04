@@ -26,7 +26,7 @@ Logger.install = (Vue, options = {}) => {
       // If not, we configure the trace.
       const prefix = (typeof logger.prefix === 'function') ? logger.prefix() : logger.prefix;
       // Format: PREFIX :: LEVEL :: data
-      console[level](`[${prefix} :: ${level}] :: `.toUpperCase(), ...data); // eslint-disable-line no-console
+      console[level](`[${prefix} :: ${level}] ::`.toUpperCase(), ...data); // eslint-disable-line no-console
     };
     // If shortname is active, we can access the logger directly through this.$error()
     if (logger.shortname) {
