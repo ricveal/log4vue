@@ -1,0 +1,45 @@
+import merge from 'lodash.merge';
+
+const Logger = { installed: false };
+Logger.install = (Vue, options = {}) => {
+  // If is installed, everything is done.
+  if (Logger.installed) return;
+  // Default options
+  const defaultLogger = {
+    prefix: new Date().toISOString(),
+    shortname: true,
+    levels: ['log', 'debug', 'warn', 'error'],
+    severity: 0,
+    // 0 -> 'log', 'debug', 'warn', 'error'
+    // 1 -> 'debug', 'warn', 'error'
+    // 2 -> 'warn', 'error'
+    // 3 -> 'error'
+  };
+  // Logger object with the default properties merged with the own properties of options.
+  // If a key exists in both objects, the value from options will be used.
+  const logger = merge(defaultLogger, options);
+  if (options.levels) {
+    logger.levels = options.levels;
+  }
+  logger.levels.forEach((level, index) => {
+    logger[level] = (...data) => {
+      // If severity is greater than current level, we return nothing.
+      if (logger.severity > index) return;
+      // If not, we configure the trace.
+      const prefix = (typeof logger.prefix === 'function') ? logger.prefix() : logger.prefix;
+      // Format: PREFIX :: LEVEL :: data
+      console[level](`[${prefix} :: ${level}] :: `.toUpperCase(), ...data); // eslint-disable-line no-console
+    };
+    // If shortname is active, we can access the logger directly through this.$error()
+    if (logger.shortname) {
+      Vue.prototype[`$${level}`] = logger[level]; // eslint-disable-line no-param-reassign
+    }
+  });
+  // The logger will be accesible in this.$console
+  Vue.prototype.$console = logger; // eslint-disable-line no-param-reassign
+  Vue.console = logger; // eslint-disable-line no-param-reassign
+  window.logger = logger;
+  Logger.installed = true;
+};
+
+export default Logger;

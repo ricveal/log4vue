@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="assets/style.css?t=615badd5">
+    <link rel="stylesheet" href="assets/customStyles.css?t=7ed7648b">
+    <script src="assets/script.js?t=42463e55"></script>
+    <title>log4vue</title>
+    <meta name="viewport" content="width=device-width">
+    <script>if (false || window.location.hostname.indexOf("ThinkingInReact.xyz") === window.location.hostname.length - 19) {
+        (function(d,o,c,p,r,e,s){d['GoogleAnalyticsObject']=r;d[r]=d[r]||function(){(d[r].q=d[r].q||[]).push(arguments)},d[r].l=1*new Date();e=o.createElement(c),s=o.getElementsByTagName(c)[0];e.async=1;e.src=p;s.parentNode.insertBefore(e,s)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create',"UA-71880467-1",'auto')
+      }
+    </script>
+  </head>
+  <body class="-menu-visible">
+    <div class="doc-layout">
+      <div class="toggle menu-toggle js-menu-toggle"></div>
+      <div class="menu toc-menu">
+        <li class="menu-item -level-0 -parent">
+          <ul class="submenu">
+            <li class="menu-item -level-1"><a class="link title -active link-index" href="index.html">log4vue</a>
+            </li>
+            <li class="menu-item -level-1"><a class="link title link-installation" href="#installation">Installation</a>
+            </li>
+            <li class="menu-item -level-1 -parent"><a class="link title link-usage" href="#usage">Usage</a>
+              <ul class="submenu">
+                <li class="menu-item -level-2"><a class="link title link-options" href="#options">Options</a>
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item -level-1"><a class="link title link-development-setup" href="#development-setup">Development Setup</a>
+            </li>
+          </ul>
+        </li>
+      </div>
+      <div class="body page-index">
+        <div class="header-nav">
+          <div class="right"><a class="iconlink" href="https://github.com/ricveal/log4vue" data-title="ricveal/log4vue">
+              <!-- span.title Open in GitHub--><span class="icon -github"></span></a>
+          </div>
+        </div>
+        <div class="markdown-body"><h1 id="log4vue">log4vue</h1>
+<blockquote>
+<p>It works with Vue.js 2.x</p>
+</blockquote>
+<h2 id="installation">Installation</h2>
+<pre><code class="lang-bash">npm install <span class="pl-c1">log</span>4vue --save
+</code></pre>
+<p>or using Yarn:</p>
+<pre><code class="lang-bash">yarn add <span class="pl-c1">log</span>4vue
+</code></pre>
+<h2 id="usage">Usage</h2>
+<pre><code class="lang-js"><span class="pl-c">// ready</span>
+<span class="pl-k">import</span> log4vue <span class="pl-k">from</span> <span class="pl-s">&apos;log4vue&apos;</span>;
+
+Vue.use(log4vue, {
+  <span class="hljs-attr">prefix</span>: <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="pl-k">new</span> <span class="pl-c1">Date</span>(),
+  <span class="hljs-attr">shortname</span>: <span class="pl-c1">true</span>,
+})
+</code></pre>
+<pre><code class="lang-js"><span class="pl-c">// using</span>
+<span class="pl-k">export</span> <span class="pl-k">default</span> {
+  ready () {
+    <span class="pl-c">// when shortname is set to true.</span>
+    <span class="pl-k">this</span>.$error(<span class="pl-s">&apos;hello world&apos;</span>);
+
+    <span class="pl-c">// using in global</span>
+    Vue.console.log(<span class="pl-s">&apos;hello world&apos;</span>);
+    <span class="pl-c">// or</span>
+    <span class="pl-k">this</span>.$<span class="pl-c1">console</span>.log(<span class="pl-s">&apos;hello world&apos;</span>);
+
+    <span class="pl-c">// as window object</span>
+    <span class="pl-c1">window</span>.logger.log(<span class="pl-s">&apos;hello world&apos;</span>);
+  }
+}
+</code></pre>
+<p>The default level group are <code>[&apos;log&apos;, &apos;debug&apos;, &apos;warn&apos;, &apos;error&apos;]</code>, but you can modify them using
+&#x2019;levels&#x2019; property in configuration:</p>
+<pre><code class="lang-js">Vue.use(vueLogger, { <span class="hljs-attr">levels</span>: [<span class="pl-s">&apos;info&apos;</span>] });
+
+<span class="pl-k">this</span>.$info(<span class="pl-s">&apos;hello world&apos;</span>);
+</code></pre>
+<h3 id="options">Options</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>prefix</td>
+<td>string</td>
+<td>None</td>
+<td>The prefix can be dynamically generated</td>
+</tr>
+<tr>
+<td>severity</td>
+<td>boolean</td>
+<td>true</td>
+<td>Allows you to set which message will be shown</td>
+</tr>
+<tr>
+<td>shortname</td>
+<td>boolean</td>
+<td>true</td>
+<td></td>
+</tr>
+<tr>
+<td>levels</td>
+<td>array</td>
+<td>[&#x2018;log&#x2019;, &#x2018;debug&#x2019;, &#x2018;warn&#x2019;, &#x2018;error&#x2019;]</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="development-setup">Development Setup</h2>
+<pre><code class="lang-bash"><span class="pl-c"># install deps</span>
+yarn
+
+<span class="pl-c"># build dist files</span>
+yarn build
+
+<span class="pl-c"># run all tests</span>
+yarn <span class="pl-c1">test</span>
+
+<span class="pl-c"># run linter</span>
+yarn lint
+</code></pre>
+
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
