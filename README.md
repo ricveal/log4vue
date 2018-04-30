@@ -24,17 +24,10 @@ npm test
 npm run docs
 ```
 
-## Questions
-
-For questions and support please use the [Discord chat server](https://chat.vuejs.org) or [the official forum](http://forum.vuejs.org). The issue list of this repo is **exclusively** for bug reports and feature requests.
-
-## Issues
-
-Please make sure to read the [Issue Reporting Checklist](https://github.com/vuejs/vue/blob/dev/.github/CONTRIBUTING.md#issue-reporting-guidelines) before opening an issue. Issues not conforming to the guidelines may be closed immediately.
 
 ## Contribution
 
-Please make sure to read the [Contributing Guide](https://github.com/vuejs/vue/blob/dev/.github/CONTRIBUTING.md) before making a pull request.
+Please make sure to read the [Contributing Guide](https://github.com/ricveal/log4vue/blob/develop/.github/CONTRIBUTING.md) before making a pull request.
 
 ## Changelog
 

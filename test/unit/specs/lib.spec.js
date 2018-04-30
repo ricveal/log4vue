@@ -45,6 +45,50 @@ describe('If installed, return', () => {
   });
 });
 
+describe('severity works and shortname', () => {
+  // reinstall plugin
+  Logger.installed = false;
+  jest.resetModules();
+  const Vue = require('vue');
+
+  Vue.use(Logger, { severity: 2, shortname: false });
+
+  it('severity is properly defined', () => {
+    expect(Vue.console.severity).toBe(2);
+    expect(Vue.console.shortname).toBeFalsy();
+    expect(Vue.$log).toBeUndefined();
+    expect(Vue.$error).toBeUndefined();
+  });
+
+  it('add level info', () => {
+    spyOn(console, 'log');
+    expect(Vue.console.log).toBeDefined();
+    Vue.console.log('nothing');
+    expect(console.log).not.toBeCalled();
+  });
+
+  it('add level info', () => {
+    spyOn(console, 'debug');
+    expect(Vue.console.debug).toBeDefined();
+    Vue.console.debug('nothing');
+    expect(console.debug).not.toBeCalled();
+  });
+
+  it('add level info', () => {
+    spyOn(console, 'warn');
+    expect(Vue.console.warn).toBeDefined();
+    Vue.console.warn('nothing');
+    expect(console.warn).toBeCalled();
+  });
+
+  it('add level info', () => {
+    spyOn(console, 'error');
+    expect(Vue.console.error).toBeDefined();
+    Vue.console.error('nothing');
+    expect(console.error).toBeCalled();
+  });
+});
+
 describe('Vue log option', () => {
   // reinstall plugin
   Logger.installed = false;
@@ -72,4 +116,19 @@ describe('Vue log option', () => {
     vm.$info(str);
     expect(vm.$info).toHaveBeenCalledWith(str);
   });
+
+  describe('prefix as function', () => {
+  // reinstall plugin
+  Logger.installed = false;
+  jest.resetModules();
+  const Vue = require('vue');
+  const prefixFn = () => 'hello';
+
+  Vue.use(Logger, { prefix: prefixFn });
+  it('should behave...', () => {
+    spyOn(console, 'log');
+    Vue.console.log('world')
+    expect(console.log).toBeCalledWith('[HELLO :: LOG] ::', 'world')
+  });
+  })
 });
