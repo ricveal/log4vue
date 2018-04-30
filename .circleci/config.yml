@@ -39,11 +39,8 @@ jobs:
           at: ~/project
       - run: npm run test:unit
       - run:
-          name: report coverage stats for non-PRs
-          command: |
-            if [[ -z $CI_PULL_REQUEST ]]; then
-              ./node_modules/.bin/codecov
-            fi
+          name: report coverage stats
+          command: ./node_modules/.bin/codecov
 
 workflows:
   version: 2
