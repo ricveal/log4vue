@@ -41,6 +41,7 @@
     "babel-preset-env": "^1.6.1",
     "babel-preset-flow-vue": "^1.0.0",
     "buble": "^0.19.3",
+    "codecov": "^3.0.1",
     "commitizen": "^2.9.6",
     "css-loader": "^0.28.10",
     "es6-promise": "^4.2.4",
