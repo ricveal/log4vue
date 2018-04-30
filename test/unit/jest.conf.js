@@ -6,7 +6,7 @@ module.exports = {
     'js',
   ],
   moduleNameMapper: {
-    '^@/(.*)$': '<rootDir>/src/$1',
+    log4vue: '<rootDir>/src/',
   },
   transform: {
     '^.+\\.js$': '<rootDir>/node_modules/babel-jest',

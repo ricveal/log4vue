@@ -1,27 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1520130571384" clover="3.2.0">
-  <project timestamp="1520130571384" name="All files">
-    <metrics statements="18" coveredstatements="18" conditionals="11" coveredconditionals="4" methods="4" coveredmethods="3" elements="33" coveredelements="25" complexity="0" loc="18" ncloc="18" packages="1" files="1" classes="1">
-      <file name="lib.js" path="/Users/rvalonso/desarrollo/log4vue/src/lib.js">
-        <metrics statements="18" coveredstatements="18" conditionals="11" coveredconditionals="4" methods="4" coveredmethods="3"/>
-        <line num="1" count="2" type="stmt"/>
-        <line num="2" count="3" type="cond" truecount="0" falsecount="1"/>
-        <line num="4" count="2" type="cond" truecount="1" falsecount="1"/>
-        <line num="6" count="10" type="stmt"/>
-        <line num="18" count="4" type="stmt"/>
-        <line num="19" count="7" type="stmt"/>
-        <line num="20" count="8" type="cond" truecount="2" falsecount="0"/>
-        <line num="22" count="2" type="stmt"/>
-        <line num="23" count="5" type="stmt"/>
-        <line num="25" count="5" type="cond" truecount="0" falsecount="2"/>
-        <line num="27" count="2" type="cond" truecount="0" falsecount="2"/>
-        <line num="29" count="2" type="stmt"/>
-        <line num="32" count="7" type="cond" truecount="1" falsecount="1"/>
-        <line num="33" count="7" type="stmt"/>
-        <line num="37" count="2" type="stmt"/>
-        <line num="38" count="2" type="stmt"/>
-        <line num="39" count="2" type="stmt"/>
-        <line num="40" count="2" type="stmt"/>
+<coverage generated="1525081587116" clover="3.2.0">
+  <project timestamp="1525081587116" name="All files">
+    <metrics statements="18" coveredstatements="15" conditionals="11" coveredconditionals="5" methods="4" coveredmethods="3" elements="33" coveredelements="23" complexity="0" loc="18" ncloc="18" packages="1" files="2" classes="2">
+      <file name="index.js" path="/Users/rvalonso/desarrollo/log4vue/src/index.js">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+      </file>
+      <file name="install.js" path="/Users/rvalonso/desarrollo/log4vue/src/install.js">
+        <metrics statements="16" coveredstatements="13" conditionals="11" coveredconditionals="5" methods="4" coveredmethods="3"/>
+        <line num="3" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
+        <line num="18" count="1" type="stmt"/>
+        <line num="19" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="21" count="1" type="stmt"/>
+        <line num="22" count="4" type="stmt"/>
+        <line num="24" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="26" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="28" count="0" type="stmt"/>
+        <line num="31" count="4" type="cond" truecount="1" falsecount="1"/>
+        <line num="32" count="4" type="stmt"/>
+        <line num="36" count="1" type="stmt"/>
+        <line num="37" count="1" type="stmt"/>
+        <line num="38" count="1" type="stmt"/>
+        <line num="39" count="1" type="stmt"/>
       </file>
     </metrics>
   </project>

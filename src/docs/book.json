@@ -1,8 +1,0 @@
-{
-  "title": "log4vue",
-  "structure": {
-    "readme": "../../README.md",
-    "summary": "Summary.md"
-  },
-  "plugins": ["anchors", "richquotes"]
-}
