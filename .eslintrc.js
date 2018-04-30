@@ -1,4 +1,4 @@
-// http://eslint.org/docs/user-guide/configuring
+// https://eslint.org/docs/user-guide/configuring
 
 module.exports = {
   root: true,
@@ -15,25 +15,41 @@ module.exports = {
     'html'
   ],
   // check if imports actually resolve
-  'settings': {
+  settings: {
     'import/resolver': {
-      'webpack': {
-        'config': 'build/webpack.base.conf.js'
+      webpack: {
+        config: 'examples/webpack.config.js'
       }
     }
   },
   // add your custom rules here
-  'rules': {
+  rules: {
     // don't require .vue extension when importing
     'import/extensions': ['error', 'always', {
-      'js': 'never',
-      'vue': 'never'
+      js: 'never',
+      vue: 'never'
+    }],
+    // disallow reassignment of function parameters
+    // disallow parameter object manipulation except for specific exclusions
+    'no-param-reassign': ['error', {
+      props: true,
+      ignorePropertyModificationsFor: [
+        'state', // for vuex state
+        'acc', // for reduce accumulators
+        'e' // for e.returnvalue
+      ]
     }],
     // allow optionalDependencies
     'import/no-extraneous-dependencies': ['error', {
-      'optionalDependencies': ['test/unit/index.js']
+      optionalDependencies: ['test/unit/index.js']
     }],
     // allow debugger during development
-    'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0
+    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+    // allows omitting parens when there is only one ar
+    'arrow-parens': ['error', 'as-needed'],
+    // disallow dangling underscores in identifiers
+    'no-underscore-dangle': ['error', {
+      allow: ['_id']
+    }],
   }
 }

@@ -1,81 +1,53 @@
 # log4vue
 [![Ci](https://img.shields.io/circleci/project/github/ricveal/log4vue.svg)](https://circleci.com/gh/ricveal/log4vue) [![Version](https://img.shields.io/npm/v/log4vue.svg)](https://www.npmjs.com/package/log4vue) [![License](https://img.shields.io/npm/l/log4vue.svg)](https://www.npmjs.com/package/log4vue) [![Downloads](https://img.shields.io/npm/dm/log4vue.svg)](https://www.npmjs.com/package/log4vue)
 
-> It works with Vue.js 2.x
+### Introduction
 
-## Installation
+`log4vue` is a customizable logger for [Vue.js](http://vuejs.org).
 
-```bash
-npm install log4vue --save
-```
+### Development Setup
 
-or using Yarn:
-
-```bash
-yarn add log4vue
-```
-
-## Usage
-
-```js
-// ready
-import log4vue from 'log4vue';
-
-Vue.use(log4vue, {
-  prefix: () => new Date(),
-  shortname: true,
-})
-```
-
-```js
-// using
-export default {
-  ready () {
-    // when shortname is set to true.
-    this.$error('hello world');
-
-    // using in global
-    Vue.console.log('hello world');
-    // or
-    this.$console.log('hello world');
-
-    // as window object
-    window.logger.log('hello world');
-  }
-}
-```
-
-The default level group are `['log', 'debug', 'warn', 'error']`, but you can modify them using
-'levels' property in configuration:
-
-```js
-Vue.use(vueLogger, { levels: ['info'] });
-
-this.$info('hello world');
-```
-
-### Options
-
-| Name      | Type    | Default                                  | Description                              |
-| --------- | ------- | ---------------------------------------- | ---------------------------------------- |
-| prefix    | string  | None                                     | The prefix can be dynamically generated  |
-| severity       | boolean | true                                     | Allows you to set which message will be shown |
-| shortname | boolean | true                                     |                                          |
-| levels    | array   | ['log', 'debug', 'warn', 'error'] |                                          |
-
-## Development Setup
-
-```bash
+``` bash
 # install deps
-yarn
+npm install
 
 # build dist files
-yarn build
+npm run build
 
-# run all tests
-yarn test
+# serve examples at localhost:8080
+npm run dev
 
-# run linter
-yarn lint
+# lint & run all tests
+npm test
+
+# serve docs at localhost:4000 (requires global gitbook-cli)
+npm run docs
 ```
+
+## Questions
+
+For questions and support please use the [Discord chat server](https://chat.vuejs.org) or [the official forum](http://forum.vuejs.org). The issue list of this repo is **exclusively** for bug reports and feature requests.
+
+## Issues
+
+Please make sure to read the [Issue Reporting Checklist](https://github.com/vuejs/vue/blob/dev/.github/CONTRIBUTING.md#issue-reporting-guidelines) before opening an issue. Issues not conforming to the guidelines may be closed immediately.
+
+## Contribution
+
+Please make sure to read the [Contributing Guide](https://github.com/vuejs/vue/blob/dev/.github/CONTRIBUTING.md) before making a pull request.
+
+## Changelog
+
+Details changes for each release are documented in the [release notes](https://github.com/ricveal/log4vue/releases).
+
+## Stay In Touch
+
+- For latest releases and announcements, follow on Twitter: [@ricveal](https://twitter.com/ricveal)
+
+## License
+
+[MIT](http://opensource.org/licenses/MIT)
+
+Copyright (c) 2016-2018 Ricardo Vega
+
 
