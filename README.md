@@ -1,5 +1,9 @@
 # log4vue
-[![Ci](https://img.shields.io/circleci/project/github/ricveal/log4vue.svg)](https://circleci.com/gh/ricveal/log4vue) [![Version](https://img.shields.io/npm/v/log4vue.svg)](https://www.npmjs.com/package/log4vue) [![License](https://img.shields.io/npm/l/log4vue.svg)](https://www.npmjs.com/package/log4vue) [![Downloads](https://img.shields.io/npm/dm/log4vue.svg)](https://www.npmjs.com/package/log4vue)
+[![Ci](https://img.shields.io/circleci/project/github/ricveal/log4vue.svg)](https://circleci.com/gh/ricveal/log4vue)
+[![codecov](https://codecov.io/gh/ricveal/log4vue/branch/master/graph/badge.svg)](https://codecov.io/gh/ricveal/log4vue)
+[![Version](https://img.shields.io/npm/v/log4vue.svg)](https://www.npmjs.com/package/log4vue)
+[![License](https://img.shields.io/npm/l/log4vue.svg)](https://www.npmjs.com/package/log4vue)
+[![Downloads](https://img.shields.io/npm/dm/log4vue.svg)](https://www.npmjs.com/package/log4vue)
 
 ### Introduction
 
