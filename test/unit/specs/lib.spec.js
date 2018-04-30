@@ -1,4 +1,4 @@
-import Logger from '@/lib';
+import Logger from 'log4vue'; // eslint-disable-line
 
 /* eslint-disable global-require */
 
