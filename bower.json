@@ -1,0 +1,19 @@
+{
+  "name": "log4vue",
+  "main": "dist/log4vue.js",
+  "description": "Vue.js logger",
+  "authors": "Ricardo Vega",
+  "license": "MIT",
+  "ignore": [
+    "examples",
+    "test",
+    "docs",
+    ".gitignore",
+    ".eslintrc",
+    ".babelrc",
+    "*.json",
+    "*.md",
+    "*.yml",
+    "*.lock"
+  ]
+}

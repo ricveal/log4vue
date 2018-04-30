@@ -1,8 +1,16 @@
 {
   "title": "log4vue",
-  "structure": {
-    "readme": "../../README.md",
-    "summary": "Summary.md"
+  "gitbook": ">3.0.0",
+  "plugins": ["edit-link", "theme-vuejs", "-fontsettings", "github"],
+  "pluginsConfig": {
+    "github": {
+      "url": "https://github.com/ricveal/log4vue/"
+    }
   },
-  "plugins": ["anchors", "richquotes"]
+  "links": {
+    "sharing": {
+      "facebook": false,
+      "twitter": false
+    }
+  }
 }
