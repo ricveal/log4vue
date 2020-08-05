@@ -5,6 +5,8 @@
 [![License](https://img.shields.io/npm/l/log4vue.svg)](https://www.npmjs.com/package/log4vue)
 [![Downloads](https://img.shields.io/npm/dm/log4vue.svg)](https://www.npmjs.com/package/log4vue)
 
+> Deprecated in favour of [scribere](/ricveal/scribere)
+
 ### Introduction
 
 `log4vue` is a customizable logger for [Vue.js](http://vuejs.org).
